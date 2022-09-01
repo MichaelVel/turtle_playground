@@ -6,6 +6,7 @@ H = 70
 W = 30
 SPACE = 10
 
+DIAG_B = (hypotenuse(W/3, H/7))/2
 DIAG_AG = hypotenuse(W/3,H*(6/7))
 DIAG_AL = hypotenuse(W*(1/6),H*(2/7))
 DIAG_M = DIAG_AL
@@ -24,9 +25,16 @@ LETTERS = {
               (-80, DIAG_AG, PRIMARY), (-10, H/7,     PRIMARY), (-90, W/3,     PRIMARY),
               (-90, H*(2/7), PRIMARY), (  0, H/7,     WHITE  ), ( 14, DIAG_AL, PRIMARY),
               (152, DIAG_AL, PRIMARY), (104, W/3,     PRIMARY), (-90, H/7,     WHITE  ),
-              (-90, W/3,     PRIMARY), ( 90, H*(2/7),     PRIMARY), (-90, W/3,     PRIMARY),
+              (-90, W/3,     PRIMARY), ( 90, H*(2/7), PRIMARY), (-90, W/3,     PRIMARY),
         ],
-        'B': [],
+        'B': [( 90, H,        PRIMARY), (-90, W*(2/3), PRIMARY), (-45, DIAG_R,  PRIMARY),
+              (-45, H*(2/7),  PRIMARY), (-90, W*(2/3), PRIMARY), (-90, H*(2/7), PRIMARY),
+              (-90, W/3,      PRIMARY), (-90, H*(2/7), PRIMARY), ( 90, W/3,     WHITE  ), 
+              (-135, DIAG_B,  PRIMARY), ( 90, DIAG_B,  PRIMARY), (-45, H*(2/7), PRIMARY),
+              (-90, W*(2/3),  PRIMARY), (-90, H*(2/7), PRIMARY), (-90, W/3,     PRIMARY), 
+              (-90, H*(2/7),  PRIMARY), ( 90, W/3,     WHITE  ), (-135, DIAG_R, PRIMARY), 
+              (-45, W*(2/3),  PRIMARY), 
+        ],
         'C': [( 90, H,       PRIMARY), (-90, W,       PRIMARY), (-90, H/7,     PRIMARY), 
               (-90, W*(2/3), PRIMARY), ( 90, H*(5/7), PRIMARY), ( 90, W*(2/3), PRIMARY),
               (-90, H/7,     PRIMARY), (-90, W,       PRIMARY),
@@ -78,7 +86,12 @@ LETTERS = {
               ( 90, W/3,     PRIMARY), (-90, H/7,     WHITE  ), (-90, W*(2/3), PRIMARY),
               (-90, H,       PRIMARY), (-90, W,       PRIMARY),
         ],
-        'P': [],
+        'P': [( 90, H,       PRIMARY), (-90, W*(2/3), PRIMARY), (-45, DIAG_R,  PRIMARY),
+              (-45, H*(2/7), PRIMARY), (-45, DIAG_R,  PRIMARY), (-45, W/3,     PRIMARY),
+              (-90, H/7,     WHITE  ), (  0, H*(2/7), PRIMARY),
+              (-90, W/3,     PRIMARY), (-90, H*(2/7), PRIMARY), (-90, W/3,     PRIMARY),
+              ( 90, H/7,     WHITE  ), (  0, H*(3/7), PRIMARY), (-90, W/3,     PRIMARY),
+        ],
         'Q': [],
         'R': [( 90, H,       PRIMARY), (-90, W*(2/3), PRIMARY), (-45, DIAG_R,  PRIMARY),
               (-45, H*(2/7), PRIMARY), (-45, DIAG_R,  PRIMARY), ( 90, DIAG_R,  PRIMARY),
@@ -135,7 +148,7 @@ class Letter:
 if __name__ == '__main__':
     ws = turtle.Screen()
     ws.setup(1000,650, startx= 1700, starty= 200)
-    test = Letter('R',-400, 200)
+    test = Letter('B',-400, 200)
     test.draw()
     turtle.exitonclick()
 
