@@ -39,7 +39,11 @@ LETTERS = {
               (-90, W*(2/3), PRIMARY), ( 90, H*(5/7), PRIMARY), ( 90, W*(2/3), PRIMARY),
               (-90, H/7,     PRIMARY), (-90, W,       PRIMARY),
         ],
-        'D': [],
+        'D': [( 90, H,        PRIMARY), (-90, W*(2/3), PRIMARY), (-45, DIAG_R,  PRIMARY),
+              (-45, H*(5/7),  PRIMARY), (-90, W*(2/3), PRIMARY), (-90, H*(5/7), PRIMARY),
+              (-90, W/3,      PRIMARY), (-90, H*(5/7), PRIMARY), ( 90, W/3,     WHITE  ), 
+              (-135, DIAG_R,  PRIMARY), (-45, W*(2/3), PRIMARY),
+        ],
         'E': [( 90, H,       PRIMARY), (-90, W,       PRIMARY), (-90, H/7,     PRIMARY), 
               (-90, W*(2/3), PRIMARY), ( 90, H*(2/7), PRIMARY), ( 90, W/3,     PRIMARY),
               (-90, H/7,     PRIMARY), (-90, W/3,     PRIMARY), ( 90, H*(2/7), PRIMARY),
@@ -50,14 +54,27 @@ LETTERS = {
               (-90, H/7,     PRIMARY), (-90, W/3,     PRIMARY), ( 90, H*(3/7), PRIMARY),
               (-90, W/3,     PRIMARY),
         ],
-        'G': [],
-        'H': [],
+        'G': [( 90, H,       PRIMARY), (-90, W,       PRIMARY), (-90, H/7,     PRIMARY), 
+              (-90, W*(2/3), PRIMARY), ( 90, H*(5/7), PRIMARY), ( 90, W/3,     PRIMARY),
+              ( 90, H*(2/7), PRIMARY), ( 90, W/6,     PRIMARY), (-90, H/7,     PRIMARY),
+              (-90, W/2,     PRIMARY), (-90, H*(4/7), PRIMARY), (-90, W,       PRIMARY),
+        ],
+        'H': [( 90, H,       PRIMARY), (-90, W/3,     PRIMARY), (-90, H*(3/7), PRIMARY), 
+              ( 90, W/3,     PRIMARY), ( 90, H*(3/7), PRIMARY), (-90, W/3,     PRIMARY),
+              (-90, H,       PRIMARY), (-90, W/3,     PRIMARY), (-90, H*(3/7), PRIMARY),
+              ( 90, W/3,     PRIMARY), ( 90, H*(3/7), PRIMARY), (-90, W/3,     PRIMARY),
+        ],
         'I': [( 90, H*(1/7), PRIMARY), (-90, W/3,     PRIMARY), ( 90, H*(5/7), PRIMARY),
               ( 90, W/3,     PRIMARY), (-90, H*(1/7), PRIMARY), (-90, W,       PRIMARY),
               (-90, H*(1/7), PRIMARY), (-90, W/3,     PRIMARY), ( 90, H*(5/7), PRIMARY),
               ( 90, W/3,     PRIMARY), (-90, H*(1/7), PRIMARY), (-90, W,       PRIMARY),
         ],
-        'J': [],
+        'J': [( 90, H/14,    WHITE  ), (  0, H*(3/14), PRIMARY), (-90, W/3,     PRIMARY),
+              (-90, H/7,     PRIMARY), ( 90, W/3,      PRIMARY), ( 90, H*(5/7), PRIMARY),
+              ( 90, W/3,     PRIMARY), (-90, H/7,      PRIMARY), (-90, W*(2/3), PRIMARY),
+              (-90, H*(6/7), PRIMARY), (-45, DIAG_R,   PRIMARY), (-45, W/2,     PRIMARY),
+              (-45, DIAG_B,  PRIMARY),
+        ],
         'K': [],
         'L': [( 90, H,       PRIMARY), (-90, W/3,     PRIMARY), (-90, H*(6/7), PRIMARY),
               ( 90, W*(2/3), PRIMARY), (-90, H/7,     PRIMARY), (-90, W,       PRIMARY),
@@ -148,7 +165,7 @@ class Letter:
 if __name__ == '__main__':
     ws = turtle.Screen()
     ws.setup(1000,650, startx= 1700, starty= 200)
-    test = Letter('B',-400, 200)
+    test = Letter('J',-400, 200)
     test.draw()
     turtle.exitonclick()
 
